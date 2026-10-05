@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Accesibilidad</title>
+  <style>
+    /* ===== Estilos generales ===== */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      font: 1em / 1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 1em;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    header {
+      border-bottom: 2px solid #333;
+      margin-bottom: 1.5em;
+    }
+
+    .problema {
+      border: 1px solid #ccc;
+      padding: 1em 1.5em;
+      margin-bottom: 2em;
+    }
+
+    .problema > h2 {
+      margin-top: 0;
+      color: #1a3d6d;
+    }
+
+    /* ===== Problema 1 ===== */
+    .button {
+      color: white;
+      background-color: blue;
+      border: none;
+      border-radius: 10px;
+      width: 170px;
+      padding: 10px;
+      text-align: center;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0000b3;
+    }
+
+    /* Foco visible para usuarios de teclado */
+    .button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #ff9900;
+      outline-offset: 2px;
+    }
+
+    /* ===== Problema 2 ===== */
+    form {
+      width: 400px;
+      max-width: 100%;
+    }
+
+    form ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    form li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      border: 1px solid #999;
+      padding: 1em;
+    }
+
+    legend {
+      font-weight: bold;
+      padding: 0 0.5em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Laboratorio de Accesibilidad</h1>
+    <p>Estudiantes: Analia Castillo, Felix Chung</p>
+  </header>
+
+  <main>
+
+    <!-- ================= PROBLEMA 1 ================= -->
+    <section class="problema" aria-labelledby="titulo-p1">
+      <h2 id="titulo-p1">Problema 1</h2>
+
+      <article lang="en">
+        <h3>Need help?</h3>
+
+        <p>If you have any problems with our products, our support center can offer you all the help you need, whether you want:</p>
+
+        <ol>
+          <li>Advice choosing a new product</li>
+          <li>Tech support on an existing product</li>
+          <li>Refund and cancellation assistance</li>
+        </ol>
+
+        <h4>Contact us now</h4>
+        <p>Our help center contains live chat, e-mail addresses, and phone numbers.</p>
+        <button type="button" class="button">Find Contact Details</button>
+
+        <h4>Find out answers</h4>
+        <p>Our Forums section contains a large knowledge base of searchable previously asked questions, and you can always ask a new question if you can't find the answer you're looking for.</p>
+        <button type="button" class="button">Access Forums</button>
+      </article>
+    </section>
+
+    <!-- ================= PROBLEMA 2 ================= -->
+    <section class="problema" aria-labelledby="titulo-p2">
+      <h2 id="titulo-p2">Problema 2</h2>
+
+      <form lang="en">
+        <fieldset>
+          <legend>Personal data</legend>
+          <ul>
+            <li>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name">
+            </li>
+            <li>
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" min="0">
+            </li>
+            <li>
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" autocomplete="email">
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- ================= PROBLEMA 3 ================= -->
+    <section class="problema" aria-labelledby="titulo-p3">
+      <h2 id="titulo-p3">Problema 3</h2>
+
+      <p lang="en">For more information about our activities, check out our
+        <a href="/fundraising">fundraising page</a>,
+        <a href="/education">education page</a>,
+        <a href="/resources/sponsorship.pdf">sponsorship pack (PDF, 8 MB)</a>, and
+        <a href="/resources/assessments.docx">assessment sheets (Word document)</a>.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
